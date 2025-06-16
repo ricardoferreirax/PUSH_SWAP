@@ -6,50 +6,36 @@
 #    By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 21:23:14 by rmedeiro          #+#    #+#              #
-#    Updated: 2025/06/14 21:44:03 by rmedeiro         ###   ########.fr        #
+#    Updated: 2025/06/16 13:28:13 by rmedeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME_M = push_swap
+
+SRC_M = 
+
+OBJ_M = $(SRC_M:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
+RM = rm -rf
 
-SRC_DIR = src
+INCLUDE_M = includes/push_swap.h
 
-SRC = algorithm/push_swap.c algorithm/stack_positions.c algorithm/stack_utils.c \
-      algorithm/movements.c algorithm/find_elements.c algorithm/cost_calculation.c \
-      algorithm/cheapest_move.c \
-      operations/push.c operations/swap.c operations/rotate.c operations/r_rotate.c \
-      parsing/parsing.c parsing/parsing_utils.c \
-      utils.c
+all: $(NAME_M)
 
-MAIN = main.c
+$(NAME_M): $(OBJ_M)
+	$(CC) $(CFLAGS) $^ -o $@
 
-OBJ_DIR = obj
-
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-MAIN_OBJ = $(OBJ_DIR)/main.o
-
-all: $(NAME)
-
-$(NAME): $(OBJ) $(MAIN_OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(MAIN_OBJ) -o $(NAME)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/main.o: main.c
-	@mkdir -p $(dir $@)
+%.o: %.c $(INCLUDE_M)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	$(RM) $(OBJ_M) $(OBJ_B)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME_M) $(NAME_B)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
