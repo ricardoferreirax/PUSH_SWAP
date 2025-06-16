@@ -1,0 +1,90 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/15 23:13:35 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/15 23:20:56 by rmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+int	ft_valid_number(const char *str)
+{
+	long	res;
+	int		i;
+	int		sign;
+
+	res = 0;
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+		if ((res * sign) > 2147483647 || (res * sign) < -2147483648)
+			return (1);
+	}
+	return (0);
+}
+
+void	ft_fill_stack(char **str, t_stack **stack)
+{
+	long int	value;
+	int			i;
+
+	*stack = NULL;
+	i = 0;
+	while (str[i])
+	{
+		if (validnum(str[i]) == 1)
+		{
+			free_arr(str);
+			ft_error();
+			ft_free_stack(stack);
+			exit(1);
+		}
+		value = ft_atoi(str[i]);
+		ft_lst_add_back(stack, ft_lst_new(value));
+		i++;
+	}
+}
+
+void	ft_index_stack(t_stack *stack_a, int size)
+{
+	t_stack	*temp;
+	t_stack	*high;
+	int		value;
+
+	while (size-- > 0)
+	{
+		temp = stack_a;
+		value = INT_MIN;
+		high = NULL;
+		while (temp)
+		{
+			if (temp->value == INT_MIN && temp->index == 0)
+				temp->index = 1;
+			if (temp->value > value && temp->index == 0)
+			{
+				value = temp->value;
+				high = temp;
+			}
+			else
+				temp = temp->next;
+		}
+		if (high)
+			high->index = size;
+	}
+}

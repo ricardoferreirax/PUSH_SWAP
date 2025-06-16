@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/13 10:38:38 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/14 21:46:05 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/06/15 23:20:08 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/15 23:20:18 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void	swap(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	int	temp;
+	t_stack	*temp;
 
-	if ((*stack)->next == NULL)
+	if (!stack || !(*stack))
 		return ;
-	temp = (*stack)->content;
-	(*stack)->content = (*stack)->next->content;
-	(*stack)->next->content = temp;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
 }

@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   libft_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/13 10:39:31 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/14 21:45:49 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/06/15 23:17:29 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/15 23:19:07 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void push(t_stack **stack_a, t_stack **stack_b)
+void	ft_putstr_fd(char *s, int fd)
 {
-	t_stack *temp;
+	int	i;
 
-	if (!stack_a || !(*stack_a))
+	i = 0;
+	if (!s || fd < 0)
 		return ;
-	temp = (*stack_a)->next;
-	(*stack_a)->next = *stack_b;
-	*stack_b = *stack_a;
-	*stack_a = temp;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

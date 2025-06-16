@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/13 10:38:15 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/14 21:45:59 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/06/15 23:22:38 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/15 23:22:56 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void	rotate(t_stack **stack)
+static void	ft_push(t_stack **src, t_stack **dest)
 {
-	int		temp;
-	t_stack	*current;
+	t_stack	*temp;
 
-	if (!(*stack) || !(*stack)->next)
+	if (!*src)
 		return ;
-	temp = (*stack)->content;
-	current = *stack;
-	while (current->next)
-	{
-		current->content = current->next->content;
-		current = current->next;
-	}
-	if (current->next == NULL)
-		current->content = temp;
+	temp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = temp;
+}
+
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_b, stack_a);
+	ft_putstr_fd("pa\n", 1);
+}
+
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_a, stack_b);
+	ft_putstr_fd("pb\n", 1);
 }
