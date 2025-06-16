@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sorting_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:27:13 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/15 23:27:24 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:14:12 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,39 @@ static int	ft_find_high(t_stack *stack)
 	return (high);
 }
 
-void	ft_sort_three(t_stack **stack_a)
+static int	ft_lowest_idx_pos(t_stack **stack)
 {
-	int	high;
+	t_stack	*tmp;
+	int		loew_i;
+	int		lowe_p;
 
-	if (ft_is_sorted(*stack_a))
-		return ;
-	high = ft_find_high(*stack_a);
-	if ((*stack_a)->value == high)
-		ft_ra(stack_a);
-	else if ((*stack_a)->next->value == high)
-		ft_rra(stack_a);
-	if ((*stack_a)->value > (*stack_a)->next->value)
-		ft_sa(stack_a);
+	tmp = *stack;
+	loew_i = INT_MAX;
+	ft_positon(stack);
+	lowe_p = tmp->pos;
+	while (tmp)
+	{
+		if (tmp->index < loew_i)
+		{
+			loew_i = tmp->index;
+			lowe_p = tmp->pos;
+		}
+		tmp = tmp->next;
+	}
+	return (lowe_p);
+}
+
+void	ft_positon(t_stack **stack)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *stack;
+	while (tmp)
+	{
+		tmp->pos = i;
+		tmp = tmp->next;
+		i++;
+	}
 }

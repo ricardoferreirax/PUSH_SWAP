@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:29:03 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/15 23:29:16 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/16 09:29:11 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ static void	ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 		ft_sort(stack_a, stack_b);
 }
 
-void	free_arr(char **v)
+void	free_arr(char **args)
 {
 	int	i;
 
 	i = 0;
-	while (v[i])
+	while (args[i])
 	{
-		free(v[i]);
+		free(args[i]);
 		i++;
 	}
-	free(v);
+	free(args);
 }
 
-int	main(int c, char **v)
+int	main(int c, char **args)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -46,7 +46,7 @@ int	main(int c, char **v)
 	stack_b = NULL;
 	if (c > 1)
 	{
-		str = ft_stack(v);
+		str = ft_stack(args);
 		ft_parsing(str);
 		ft_fill_stack(str, &stack_a);
 		free_arr(str);

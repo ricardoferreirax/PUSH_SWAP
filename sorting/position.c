@@ -6,26 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:21:23 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/15 23:21:41 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:14:27 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_positon(t_stack **stack)
-{
-	t_stack	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->pos = i;
-		tmp = tmp->next;
-		i++;
-	}
-}
 
 static int	ft_target(t_stack **stack_a, int b_index, int target_index,
 				int target_pos)
