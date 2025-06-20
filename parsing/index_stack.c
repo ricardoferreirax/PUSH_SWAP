@@ -6,13 +6,13 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:58:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 16:33:35 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/20 16:45:18 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_index_stack(t_stack *stack_a, int size) // atribui indices aos valores
+void	ft_index_stack(t_stack *stack_a, int size)
 {
 	t_stack	*temp;
 	t_stack	*high;
