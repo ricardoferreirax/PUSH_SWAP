@@ -6,11 +6,22 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:26:36 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/16 13:12:17 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:01:31 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_is_sorted(t_stack *stack)
+{
+	while (stack && stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
 
 static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b)
 {

@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/15 22:58:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/15 23:04:52 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/06/20 13:11:31 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/20 16:37:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_is_sorted(t_stack *stack)
-{
-	while (stack && stack->next)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
 
 static int	ft_valid_args(char **args)
 {
@@ -71,12 +60,13 @@ static int	ft_is_duplicated(char **args)
 
 void	ft_parsing(char **args)
 {
-	if (!args)
+/* 	if (!args)
 	{
 		free_arr(args);
 		ft_error();
 		exit(1);
-	}
+	} 
+*/
 	if (!ft_valid_args(args))
 	{
 		free_arr(args);
