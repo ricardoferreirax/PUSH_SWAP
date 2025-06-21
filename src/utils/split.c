@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:25:13 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/15 23:25:22 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:06:10 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int	count_words(const char *s, char sep)
 {
