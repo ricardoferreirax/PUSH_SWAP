@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:11:31 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:00:23 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 17:04:24 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_valid_args(char **args)
 	return (1);
 }
 
-static int	ft_is_duplicated(char **args)
+int	ft_is_duplicated(char **args)
 {
 	int	i;
 	int	j;
@@ -60,13 +60,6 @@ static int	ft_is_duplicated(char **args)
 
 void	ft_parsing(char **args)
 {
-/* 	if (!args)
-	{
-		free_arr(args);
-		ft_error();
-		exit(1);
-	} 
-*/
 	if (!ft_valid_args(args))
 	{
 		free_arr(args);

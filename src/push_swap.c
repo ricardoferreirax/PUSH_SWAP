@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:29:03 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:06:31 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 16:39:10 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int c, char **args)
 	stack_b = NULL;
 	if (c > 1)
 	{
-		str = ft_stack(args);
+		str = ft_parsing_stack(args);
 		ft_parsing(str);
 		ft_fill_stack(str, &stack_a);
 		free_arr(str);

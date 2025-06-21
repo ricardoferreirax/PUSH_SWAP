@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:13:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 13:59:25 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:21:25 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_fill_stack(char **str, t_stack **stack)
 	i = 0;
 	while (str[i])
 	{
-		if (validnum(str[i]) == 1)
+		if (ft_valid_number(str[i]) == 1)
 		{
 			free_arr(str);
 			ft_error();

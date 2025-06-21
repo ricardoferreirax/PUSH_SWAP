@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:04:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:07:22 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:22:19 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_sa(t_stack **stack_a);
 void	ft_sb(t_stack **stack_b);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 int	ft_valid_number(const char *str);
+int	ft_is_duplicated(char **args);
 void	ft_fill_stack(char **str, t_stack **stack);
 void	ft_index_stack(t_stack *stack_a, int size);
 int	ft_is_duplicated(char **args);
