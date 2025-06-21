@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:52:10 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 18:32:39 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:04:45 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_atoi(const char *str)
 {
