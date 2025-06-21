@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:21:23 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 00:00:14 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:02:56 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_positon(t_stack **stack)
 {
