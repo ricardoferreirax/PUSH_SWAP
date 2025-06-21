@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:22:00 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 23:57:41 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:02:18 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_cost(t_stack **stack_a, t_stack **stack_b)
 {
