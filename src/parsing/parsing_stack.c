@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:09:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 16:50:56 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:00:51 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int	ft_has_only_spaces(char *s)
 {
