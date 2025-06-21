@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:23:44 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 13:12:47 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 13:58:32 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	ft_rotate(t_stack **stack)
 {
