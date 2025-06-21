@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:27:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 13:02:39 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:01:47 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost,
 		int *b_cost)
