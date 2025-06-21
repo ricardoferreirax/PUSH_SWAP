@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:11:48 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 23:46:52 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:05:37 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_lst_add_back(t_stack **stack, t_stack *new)
 {
