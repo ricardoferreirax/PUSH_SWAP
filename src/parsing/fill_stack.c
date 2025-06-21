@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:13:35 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 16:43:29 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 13:59:25 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_valid_number(const char *str)
 {
