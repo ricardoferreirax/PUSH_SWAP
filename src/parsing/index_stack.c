@@ -6,11 +6,11 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:58:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/20 16:45:18 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 13:59:55 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_index_stack(t_stack *stack_a, int size)
 {
