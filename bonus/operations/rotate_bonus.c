@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/15 23:23:44 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/22 09:11:44 by rmedeiro         ###   ########.fr       */
+/*   Created: 2025/06/21 22:59:30 by rmedeiro          #+#    #+#             */
+/*   Updated: 2025/06/21 22:59:43 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/push_swap_bonus.h"
 
 static void	ft_rotate(t_stack **stack)
 {
@@ -26,39 +26,18 @@ static void	ft_rotate(t_stack **stack)
 	last->next = temp;
 }
 
-/* void	rotate(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*iter;
-
-	if (!stack)
-		return ;
-	if (!(*stack)->next)
-		return ;
-	tmp = *stack;
-	iter = *stack;
-	*stack = tmp->next;
-	while (iter->next != NULL)
-		iter = iter->next;
-	iter->next = tmp;
-	tmp->next = NULL;
-} */
-
 void	ft_ra(t_stack **stack_a)
 {
 	ft_rotate(stack_a);
-	ft_putstr_fd("ra\n", 1);
 }
 
 void	ft_rb(t_stack **stack_b)
 {
 	ft_rotate(stack_b);
-	ft_putstr_fd("rb\n", 1);
 }
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	ft_putstr_fd("rr\n", 1);
 }
