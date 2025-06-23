@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:11:48 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:05:37 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:53:08 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,6 @@ t_stack	*ft_lst_new(int value)
 t_stack	*ft_last(t_stack *stack)
 {
 	while (stack && stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
-t_stack	*ft_before_last(t_stack *stack)
-{
-	while (stack && stack->next && stack->next->next)
 		stack = stack->next;
 	return (stack);
 }

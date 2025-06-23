@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:23:44 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/22 09:11:44 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:52:51 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,6 @@ static void	ft_rotate(t_stack **stack)
 	temp->next = NULL;
 	last->next = temp;
 }
-
-/* void	rotate(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*iter;
-
-	if (!stack)
-		return ;
-	if (!(*stack)->next)
-		return ;
-	tmp = *stack;
-	iter = *stack;
-	*stack = tmp->next;
-	while (iter->next != NULL)
-		iter = iter->next;
-	iter->next = tmp;
-	tmp->next = NULL;
-} */
 
 void	ft_ra(t_stack **stack_a)
 {

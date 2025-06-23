@@ -6,47 +6,33 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:23:15 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/22 09:13:44 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:52:35 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+t_stack	*ft_last(t_stack *stack)
+{
+	while (stack && stack->next)
+		stack = stack->next;
+	return (stack);
+}
+
 static void	ft_reverse_rotate(t_stack **stack)
 {
-	t_stack	*temp;
 	t_stack	*last;
-	t_stack	*before_last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
 	last = ft_last(*stack);
-	before_last = ft_before_last(*stack);
-	temp = *stack;
+	last->prev->next = NULL;
+	last->next = *stack;
+	(*stack)->prev = last;
+	last->prev = NULL;
 	*stack = last;
-	(*stack)->next = temp;
-	before_last->next = NULL;
 }
 
-/* void	rev_rotate(t_stack **stack)
-{
-	t_stack	*iter;
-	t_stack	*prev;
-
-	if (!stack)
-		return ;
-	if (!(*stack)->next)
-		return ;
-	iter = *stack;
-	while (iter->next != NULL)
-	{
-		prev = iter;
-		iter = iter->next;
-	}
-	prev->next = NULL;
-	iter->next = *stack;
-	*stack = iter;
-} */
 
 void	ft_rra(t_stack **stack_a)
 {

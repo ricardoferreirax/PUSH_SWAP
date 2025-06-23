@@ -6,25 +6,13 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:22:38 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/22 09:21:18 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:41:18 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 static void	ft_push(t_stack **src, t_stack **dest)
-{
-	t_stack	*temp;
-
-	if (!*src)
-		return ;
-	temp = (*src)->next;
-	(*src)->next = *dest;
-	*dest = *src;
-	*src = temp;
-}
-
-/* void	ft_push(t_stack **src, t_stack **dest)
 {
 	t_stack	*temp_src;
 	t_stack	*temp_dest;
@@ -36,8 +24,7 @@ static void	ft_push(t_stack **src, t_stack **dest)
 	*src = temp_src->next;
 	*dest = temp_src;
 	temp_src->next = temp_dest;
-} */
-
+}
 
 void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
