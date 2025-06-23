@@ -6,13 +6,13 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:22:38 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/23 09:41:18 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:03:43 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	ft_push(t_stack **src, t_stack **dest)
+void	ft_push(t_stack **src, t_stack **dest)
 {
 	t_stack	*temp_src;
 	t_stack	*temp_dest;

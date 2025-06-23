@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 22:52:20 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/22 12:38:32 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/21 23:03:27 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,49 +53,51 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	char	*dest;
-	int		idx;
+	char	*dst;
+	size_t	i;
 
-	idx = 0;
-	dest = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!dest)
+	dst = (char *)malloc(ft_strlen(s1) + 1);
+	if (!dst)
 		return (NULL);
-	while (s[idx] != '\0')
+	i = 0;
+	while (s1[i])
 	{
-		dest[idx] = s[idx];
-		idx++;
+		dst[i] = s1[i];
+		i++;
 	}
-	dest[idx] = '\0';
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*joined;
-	size_t	idx;
-	size_t	idx2;
+	char	*str;
+	size_t	i;
+	size_t	len;
+	size_t	j;
 
-	if (!s1 || !s2)
+	i = 0;
+	j = 0;
+	if (!s1 && !s2)
 		return (NULL);
-	joined = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!joined)
-		return (NULL);
-	idx = 0;
-	while (s1[idx])
-	{
-		joined[idx] = s1[idx];
-		idx++;
-	}
-	idx2 = 0;
-	while (s2[idx2])
-	{
-		joined[idx + idx2] = s2[idx2];
-		idx2++;
-	}
-	joined[idx + idx2] = '\0';
-	return (joined);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (free(s1), NULL);
+	while (s1[i])
+		str[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		str[j++] = s2[i++];
+	str[j] = '\0';
+	free(s1);
+	return (str);
 }
 
 int	ft_abs(int n)

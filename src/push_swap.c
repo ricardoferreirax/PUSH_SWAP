@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:29:03 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 16:39:10 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/06/23 09:26:42 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,5 @@ int	main(int c, char **args)
 	}
 	return (0);
 }
+
+// ARG=$(shuf -i 1-1000 -n 500 | xargs); ./push_swap $ARG | ./checker_linux $ARG && ./push_swap $ARG | wc -l
