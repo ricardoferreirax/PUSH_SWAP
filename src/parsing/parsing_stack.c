@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:09:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 17:01:45 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/18 14:07:22 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,44 @@ static int	ft_has_only_spaces(char *s)
 	return (0);
 }
 
-static char	*ft_join_args(char **args)
+static void safe_strjoin(char **dst, const char *s2)
 {
-	char	*tmp;
-	int		i;
+    char *res;
 
-	i = 1;
-	tmp = ft_strdup("");
-	while (args[i])
-	{
-		if (ft_has_only_spaces(args[i]))
-		{
-			ft_error();
-			free(tmp);
-			exit(1);
-		}
-		tmp = ft_strjoin(tmp, args[i]);
-		tmp = ft_strjoin(tmp, " ");
-		i++;
-	}
-	return (tmp);
+    res = ft_strjoin(*dst, (char *)s2);
+    if (!res)
+    {
+        ft_error();
+        exit(1);
+    }
+    *dst = res;
+}
+
+static char *ft_join_args(char **args)
+{
+    char *tmp;
+    int   i;
+
+    tmp = ft_strdup("");
+    if (!tmp)
+    {
+        ft_error();
+        exit(1);
+    }
+    i = 1;
+    while (args[i])
+    {
+        if (ft_has_only_spaces(args[i]))
+        {
+            ft_error();
+            free(tmp);
+            exit(1);
+        }
+        safe_strjoin(&tmp, args[i]);
+        safe_strjoin(&tmp, " ");
+        i++;
+    }
+    return tmp;
 }
 
 char	**ft_parsing_stack(char **args)

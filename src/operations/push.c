@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:22:38 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/23 09:03:43 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/18 12:26:44 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,8 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 	ft_putstr_fd("pa\n", 1);
 }
 
-/* void	pa(t_stack **a, t_stack **b)
-{
-	t_stack	*temp_a;
-	t_stack	*temp_b;
-
-	temp_a = *a;
-	temp_b = *b;
-	*b = temp_b->next;
-	*a = temp_b;
-	temp_b->next = temp_a;
-	ft_putstr_fd("pa\n", 1);
-} */
-
 void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);
 }
-
-/* void	pb(t_stack **a, t_stack **b)
-{
-	t_stack	*temp_a;
-	t_stack	*temp_b;
-
-	temp_a = *a;
-	temp_b = *b;
-	*a = temp_a->next;
-	*b = temp_a;
-	temp_a->next = temp_b;
-	ft_putstr_fd("pb\n", 1);
-} */

@@ -6,7 +6,7 @@
 #    By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 21:23:14 by rmedeiro          #+#    #+#              #
-#    Updated: 2025/06/21 16:41:04 by rmedeiro         ###   ########.fr        #
+#    Updated: 2025/08/18 13:17:01 by rmedeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC_M = src/operations/push.c \
 	
 OBJ_M = $(SRC_M:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -rf
 INCLUDE_M = includes/push_swap.h
 
