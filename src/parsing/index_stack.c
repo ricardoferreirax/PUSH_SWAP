@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:58:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/08/18 13:00:03 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/20 22:44:38 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,23 @@
 
 void	ft_index_stack(t_stack *stack_a, int size)
 {
-	t_stack *p;
+	t_stack *current;
 	t_stack *max_node;
 	int      max_val;
 
 	while (size-- > 0)
 	{
-		p = stack_a;
+		current = stack_a;
 		max_node = NULL;
 		max_val = INT_MIN;
-		while (p)
+		while (current)
 		{
-			if (p->index == 0 && p->value >= max_val)
+			if (current->index == 0 && current->value >= max_val)
 			{
-				max_val = p->value;
-				max_node = p;
+				max_val = current->value;
+				max_node = current;
 			}
-			p = p->next;
+			current = current->next;
 		}
 		if (max_node)
 			max_node->index = size;
