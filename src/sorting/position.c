@@ -6,7 +6,7 @@
 /*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:21:23 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/08/07 22:07:11 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/24 22:10:28 by rmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,23 @@ int	ft_find_high(t_stack *stack)
 int	ft_lowest_idx_pos(t_stack **stack)
 {
 	t_stack	*tmp;
-	int		loew_i;
-	int		lowe_p;
+	int		lowest_i;
+	int		lowest_p;
 
 	tmp = *stack;
-	loew_i = INT_MAX;
+	lowest_i = INT_MAX;
 	ft_positon(stack);
-	lowe_p = tmp->pos;
+	lowest_p = tmp->pos;
 	while (tmp)
 	{
-		if (tmp->index < loew_i)
+		if (tmp->index < lowest_i)
 		{
-			loew_i = tmp->index;
-			lowe_p = tmp->pos;
+			lowest_i = tmp->index;
+			lowest_p = tmp->pos;
 		}
 		tmp = tmp->next;
 	}
-	return (lowe_p);
+	return (lowest_p);
 }
 
 int	ft_target(t_stack **stack_a, int b_index, int target_index,
