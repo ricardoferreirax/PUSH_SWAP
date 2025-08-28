@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:04:30 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:22:19 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/26 13:32:46 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

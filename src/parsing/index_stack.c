@@ -3,64 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   index_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:58:17 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/08/20 22:44:38 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/28 17:56:34 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/* void	ft_index_stack(t_stack *stack_a, int size)
-{
-	t_stack	*temp;
-	t_stack	*high;
-	int		value;
-
-	while (size-- > 0)
-	{
-		temp = stack_a;
-		value = INT_MIN;
-		high = NULL;
-		while (temp)
-		{
-			if (temp->value == INT_MIN && temp->index == 0)
-				temp->index = 1;
-			if (temp->value > value && temp->index == 0)
-			{
-				value = temp->value;
-				high = temp;
-			}
-			else
-				temp = temp->next;
-		}
-		if (high)
-			high->index = size;
-	}
-} */
-
 void	ft_index_stack(t_stack *stack_a, int size)
 {
-	t_stack *current;
-	t_stack *max_node;
-	int      max_val;
+	t_stack	*current;
+	t_stack	*high_node;
+	int		max_value;
 
 	while (size-- > 0)
 	{
 		current = stack_a;
-		max_node = NULL;
-		max_val = INT_MIN;
+		high_node = NULL;
+		max_value = INT_MIN;
 		while (current)
 		{
-			if (current->index == 0 && current->value >= max_val)
+			if (current->index == 0 && current->value >= max_value)
 			{
-				max_val = current->value;
-				max_node = current;
+				max_value = current->value;
+				high_node = current;
 			}
 			current = current->next;
 		}
-		if (max_node)
-			max_node->index = size;
+		if (high_node)
+			high_node->index = size;
 	}
 }

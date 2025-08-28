@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:29:03 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/23 09:26:42 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/28 18:02:37 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	free_arr(char **args)
 	free(args);
 }
 
-int	main(int c, char **args)
+int	main(int ac, char **args)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -44,7 +44,7 @@ int	main(int c, char **args)
 	str = NULL;
 	stack_a = NULL;
 	stack_b = NULL;
-	if (c > 1)
+	if (ac > 1)
 	{
 		str = ft_parsing_stack(args);
 		ft_parsing(str);
@@ -58,4 +58,5 @@ int	main(int c, char **args)
 	return (0);
 }
 
-// ARG=$(shuf -i 1-1000 -n 500 | xargs); ./push_swap $ARG | ./checker_linux $ARG && ./push_swap $ARG | wc -l
+// ARG=$(shuf -i 1-1000 -n 500 | xargs); ./push_swap $ARG | 
+// ./checker_linux $ARG && ./push_swap $ARG | wc -l

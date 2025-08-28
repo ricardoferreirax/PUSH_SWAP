@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:52:10 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/06/21 14:04:45 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/28 18:03:24 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = (res * 10) + (str[i] - '0');
-		i++; 
+		i++;
 	}
 	return (res * sign);
 }

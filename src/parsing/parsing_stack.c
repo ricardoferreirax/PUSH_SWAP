@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:09:41 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/08/20 22:45:04 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/28 18:01:32 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,44 +24,44 @@ static int	ft_has_only_spaces(char *s)
 	return (0);
 }
 
-static void safe_strjoin(char **dst, const char *s2)
+static void	safe_strjoin(char **tmp, const char *s2)
 {
-    char *res;
+	char	*res;
 
-    res = ft_strjoin(*dst, (char *)s2);
-    if (!res)
-    {
-        ft_error();
-        exit(1);
-    }
-    *dst = res;
+	res = ft_strjoin(*tmp, (char *)s2);
+	if (!res)
+	{
+		ft_error();
+		exit(1);
+	}
+	*tmp = res;
 }
 
-static char *ft_join_args(char **args)
+static char	*ft_join_args(char **args)
 {
-    char *tmp;
-    int   i;
+	char	*tmp;
+	int		i;
 
-    tmp = ft_strdup("");
-    if (!tmp)
-    {
-        ft_error();
-        exit(1);
-    }
-    i = 1;
-    while (args[i])
-    {
-        if (ft_has_only_spaces(args[i]))
-        {
-            ft_error();
-            free(tmp);
-            exit(1);
-        }
-        safe_strjoin(&tmp, args[i]);
-        safe_strjoin(&tmp, " ");
-        i++;
-    }
-    return tmp;
+	tmp = ft_strdup("");
+	if (!tmp)
+	{
+		ft_error();
+		exit(1);
+	}
+	i = 1;
+	while (args[i])
+	{
+		if (ft_has_only_spaces(args[i]))
+		{
+			ft_error();
+			free(tmp);
+			exit(1);
+		}
+		safe_strjoin(&tmp, args[i]);
+		safe_strjoin(&tmp, " ");
+		i++;
+	}
+	return (tmp);
 }
 
 char	**ft_parsing_stack(char **args)
