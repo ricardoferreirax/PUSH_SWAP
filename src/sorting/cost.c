@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: rickymercury <rickymercury@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 23:22:00 by rmedeiro          #+#    #+#             */
-/*   Updated: 2025/08/20 22:46:16 by rmedeiro         ###   ########.fr       */
+/*   Updated: 2025/08/29 07:41:06 by rickymercur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ void	ft_cost(t_stack **stack_a, t_stack **stack_b)
 
 	a_size = ft_size(*stack_a);
 	b_size = ft_size(*stack_b);
-	b_tmp = *stack_b;
+	b_tmp = *stack_b;       
 	while (b_tmp)
 	{
-		b_tmp->cost_b = b_tmp->pos;
-		if (b_tmp->pos > b_size / 2)
+    	if (b_tmp->pos <= b_size / 2)
+		    b_tmp->cost_b = b_tmp->pos;
+		else if (b_tmp->pos > b_size / 2)
 			b_tmp->cost_b = (b_size - b_tmp->pos) * -1;
-		b_tmp->cost_a = b_tmp->target;
-		if (b_tmp->target > a_size / 2)
-			b_tmp->cost_a = (a_size - b_tmp->target) * -1;
+        if (b_tmp->target <= a_size / 2)    
+		    b_tmp->cost_a = b_tmp->target;
+		else if (b_tmp->target > a_size / 2)
+		    b_tmp->cost_a = (a_size - b_tmp->target) * -1;
 		b_tmp = b_tmp->next;
 	}
 }
